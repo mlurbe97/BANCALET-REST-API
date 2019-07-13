@@ -574,6 +574,7 @@
                     "res": 1
                 }
             ```
+        - Status.FORBIDDEN
 
 * __GET__ /rest/users/sizeRate/{id} = **Get user purchases no rated of the given user id.**
 	- ![#1589F0](https://placehold.it/15/f03c15/000000?text=+) Return: 
@@ -748,45 +749,312 @@
 		- QueryParam("rangeKmSlider") __->__ _The distance in KM._
 	- ![#1589F0](https://placehold.it/15/f03c15/000000?text=+) Return:
 		- JSON("ListUsersItemsDTO.class")
+            ```json
+            {
+                "nearusers": {
+                    "entry": [
+                        {
+                            "key": 2,
+                            "value": {
+                                "city": "Buenos Aires",
+                                "code": "CABA123",
+                                "country": "Argentina",
+                                "direccion": "Calle corrientes numero 2",
+                                "email": "user@user.user",
+                                "estado": 1,
+                                "image": "",
+                                "lat": 0,
+                                "lon": 0,
+                                "numImg": 0,
+                                "password": "$2a$10$A8plO/WNh8bKc0/Nw/D4wumOSsjX8dON55Oq3tKuk9/7s741bmjSu",
+                                "rate": 0,
+                                "role": "USER",
+                                "telf": "123456",
+                                "urlImg": "",
+                                "username": "usuario"
+                            }
+                        }
+                    ]
+                },
+                "rangekm": 1287,
+                "useritems": {
+                    "entry": [
+                        {
+                            "key": 2,
+                            "value": "{}"
+                        }
+                    ]
+                }
+            }
+            ```
 		- Status.NO_CONTENT
 
 *  __PUT__ /rest/users/edit = **Edit the actual user profile.**
 	- ![#1589F0](https://placehold.it/15/1589F0/000000?text=+) Recive:
 		- JSON("UserEditForm.class")
+            ```json
+            {
+                "city": "Oliva",
+                "code": 46780,
+                "country": "España",
+                "direccion": "Calle Ernest Lluch 17",
+                "lat": 0.653,
+                "lon": 0.89456,
+                "tipo": 0,
+                "telf": 9623
+            }
+            ```
 	- ![#1589F0](https://placehold.it/15/f03c15/000000?text=+) Return:
 		- JSON("UserDTO.class")
+            ```json
+            {
+                "id": 406,
+                "user": {
+                    "city": "Oliva",
+                    "code": 46780,
+                    "country": "España",
+                    "direccion": "Calle Ernest Lluch 17",
+                    "email": "icatalan@itba.edu.ar",
+                    "estado": 1,
+                    "image": "",
+                    "lat": 0.653,
+                    "lon": 0.89456,
+                    "numImg": 0,
+                    "password": "$2a$10$oNhSkqEUHyJLCnPI43YOzOn5QWOV3NJkvJiBZqN5gJZd72mrwu5jO",
+                    "rate": 0,
+                    "role": "USER",
+                    "telf": "9623",
+                    "urlImg": "",
+                    "username": "izan123"
+                }
+            }
+            ```
 
 *  __PUT__ /rest/users/editPass = **Edit the actual user password.**
 	- ![#1589F0](https://placehold.it/15/1589F0/000000?text=+) Recive:
 		- JSON("UserEditPassForm.class")
+            ```json
+            {
+                "password": "pepe123",
+                "repeatPassword": "pepe123"
+            }
+            ```
 	- ![#1589F0](https://placehold.it/15/f03c15/000000?text=+) Return:
 		- Status.ACCEPTED
 
 *  __GET__ /rest/users/misventas = **Get the actual user sales.**
 	- ![#1589F0](https://placehold.it/15/f03c15/000000?text=+) Return:
 		- JSON("UserVentasDTO.class")
-
+            ```json
+            {
+                "itemsvendidos": {
+                    "entry": [
+                        {
+                            "key": 64,
+                            "value": {
+                                "description": "pescado fresco",
+                                "estado": 0,
+                                "fechaCaducidad": "2019-09-28",
+                                "fechaPublicacion": "2019-07-12",
+                                "idVendedor": 406,
+                                "name": "pescado",
+                                "numeroVisitas": 0,
+                                "price": 45,
+                                "tipo": 4,
+                                "urlImg": ""
+                            }
+                        }
+                    ]
+                },
+                "listaventas": {
+                    "entry": [
+                        {
+                            "key": 20,
+                            "value": {
+                                "estrellas": 0,
+                                "fechaCompra": "2019-07-13",
+                                "idComprador": 405,
+                                "idVendedor": 406,
+                                "itemId": 64,
+                                "valoracion": "muy buenaooo"
+                            }
+                        }
+                    ]
+                },
+                "listcompradores": {
+                    "entry": [
+                        {
+                            "key": 405,
+                            "value": {
+                                "city": "Buenos Aires",
+                                "code": "CABA123",
+                                "country": "Argentina",
+                                "direccion": "Calle corrientes numero 2",
+                                "email": "user@user.user",
+                                "estado": 1,
+                                "image": "",
+                                "lat": 0,
+                                "lon": 0,
+                                "numImg": 0,
+                                "password": "$2a$10$A8plO/WNh8bKc0/Nw/D4wumOSsjX8dON55Oq3tKuk9/7s741bmjSu",
+                                "rate": 0,
+                                "role": "USER",
+                                "telf": "123456",
+                                "urlImg": "",
+                                "username": "usuario"
+                            }
+                        }
+                    ]
+                },
+                "user": {
+                    "city": "Buenos Aires Provincia",
+                    "code": "44444",
+                    "country": "Argentina",
+                    "direccion": "C/Defensa",
+                    "email": "icatalan@itba.edu.ar",
+                    "estado": 1,
+                    "lat": -34.60043279,
+                    "lon": -58.44685455,
+                    "numImg": 0,
+                    "password": "$2a$10$oNhSkqEUHyJLCnPI43YOzOn5QWOV3NJkvJiBZqN5gJZd72mrwu5jO",
+                    "rate": 0,
+                    "role": "USER",
+                    "telf": "3235652323",
+                    "username": "izan123"
+                },
+                "userid": 406
+            }
+            ```
 *  __GET__ /rest/users/miscompras = **Get the actual user purchases.**
 	- ![#1589F0](https://placehold.it/15/f03c15/000000?text=+) Return:
 		- JSON("UserComprasDTO.class")
-
+            ```json
+            {
+                "compras": {
+                    "entry": [
+                        {
+                            "key": 20,
+                            "value": {
+                                "estrellas": 0,
+                                "fechaCompra": "2019-07-13",
+                                "idComprador": 405,
+                                "idVendedor": 406,
+                                "itemId": 64,
+                                "valoracion": "muy buenaooo"
+                            }
+                        }
+                    ]
+                },
+                "comprasSize": 1,
+                "items": {
+                    "entry": [
+                        {
+                            "key": 64,
+                            "value": {
+                                "description": "pescado fresco",
+                                "estado": 0,
+                                "fechaCaducidad": "2019-09-28",
+                                "fechaPublicacion": "2019-07-12",
+                                "idVendedor": 406,
+                                "name": "pescado",
+                                "numeroVisitas": 0,
+                                "price": 45,
+                                "tipo": 4,
+                                "urlImg": ""
+                            }
+                        }
+                    ]
+                },
+                "itemsSize": 1,
+                "user": {
+                    "city": "Buenos Aires",
+                    "code": "CABA123",
+                    "country": "Argentina",
+                    "direccion": "Calle corrientes numero 2",
+                    "email": "user@user.user",
+                    "estado": 1,
+                    "image": "",
+                    "lat": 0,
+                    "lon": 0,
+                    "numImg": 0,
+                    "password": "$2a$10$A8plO/WNh8bKc0/Nw/D4wumOSsjX8dON55Oq3tKuk9/7s741bmjSu",
+                    "rate": 0,
+                    "role": "USER",
+                    "telf": "123456",
+                    "urlImg": "",
+                    "username": "usuario"
+                },
+                "userId": 405,
+                "vendedores": {
+                    "entry": [
+                        {
+                            "key": 406,
+                            "value": {
+                                "city": "Buenos Aires Provincia",
+                                "code": "44444",
+                                "country": "Argentina",
+                                "direccion": "C/Defensa",
+                                "email": "icatalan@itba.edu.ar",
+                                "estado": 1,
+                                "lat": -34.60043279,
+                                "lon": -58.44685455,
+                                "numImg": 0,
+                                "password": "$2a$10$oNhSkqEUHyJLCnPI43YOzOn5QWOV3NJkvJiBZqN5gJZd72mrwu5jO",
+                                "rate": 0,
+                                "role": "USER",
+                                "telf": "3235652323",
+                                "urlImg": "",
+                                "username": "izan123"
+                            }
+                        }
+                    ]
+                },
+                "vendedoresSize": 1
+            }
+            ```
 *  __GET__ /rest/users/miscontactosr = **Get the actual user recived messages.**
 	- ![#1589F0](https://placehold.it/15/f03c15/000000?text=+) Return:
 		- JSON("UserContactosDTO.class")
+            ```json
+            {
+
+            }
+            ```
 
 *  __GET__ /rest/users/miscontactose = **Get the actual user sent messages.**
 	- ![#1589F0](https://placehold.it/15/f03c15/000000?text=+) Return:
 		- JSON("UserContactosDTO.class")
+            ```json
+            {
+                
+            }
+            ```
 
 *  __POST__ /rest/users/help = **Sent a help message to the admin.**
 	- ![#1589F0](https://placehold.it/15/1589F0/000000?text=+) Recive:
 		- JSON("ContactAdminForm.class")
+            ```json
+            {
+                "name":"usuario",
+                "subject": "subject here",
+                "mensaje":"message here",
+                "email":"email of the user"
+            }
 	- ![#1589F0](https://placehold.it/15/f03c15/000000?text=+) Return:
 		- JSON("MensajeDTO.class")
-
+            ```json
+            {
+                "mensaje": "usuario. Mensaje enviado correctamente, te responderemos a traves de: user@user.user"
+            }
+            ```
 * __GET__ /rest/users/missugerencias = **Get actual user sugerences.**
 	- ![#1589F0](https://placehold.it/15/f03c15/000000?text=+) Return:
 		- JSON("ItemListDTO.class")
+            ```json
+            {
+                
+            }
+            ```
 		- Status.NOT_FOUND
 
 ### **Items (ItemRestApi.class)**
@@ -794,7 +1062,7 @@
 * __GET__ /rest/items/contactosItem/{id} = **Get my message sent to an item.**
 	- ![#1589F0](https://placehold.it/15/f03c15/000000?text=+) Return:
 		- JSON("ContactoDTO.class")
-            ```json 
+             ```json 
             {
                 "contacto":{
                     "estado": 1,
@@ -809,6 +1077,34 @@
             }
             ```
 		- Status.NOT_FOUND
+        - Status.FORBIDDEN
+
+* __GET__ /rest/items/contactosMyItem/{id} = **Get all recived messages for my item with the corresponding id.**
+	- ![#1589F0](https://placehold.it/15/f03c15/000000?text=+) Return:
+		- JSON("ContactoDTO.class")
+            ```json
+            { 
+                "size": 1, 
+                "contactos": {
+                    "entry": [
+                        {
+                            "key": 19,
+                            "value": {
+                                "estado": 1,
+                                "fechaContacto": "2019-07-12",
+                                "idComprador": 405,
+                                "idVendedor": 406,
+                                "itemId": 64,
+                                "mensaje": "Lo quiero22222222",
+                                "read": 1
+                            }
+                        }
+                    ]
+                }
+            }
+            ```
+		- Status.NOT_FOUND
+        - Status.FORBIDDEN
 
 *  __GET__ /rest/items = **List of filtered items alta.**
 	- ![#1589F0](https://placehold.it/15/1589F0/000000?text=+) Recive:
