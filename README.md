@@ -6,6 +6,7 @@ API REST
    * [API REST](#API-REST)
    * [Main page (MainPageRestApi.class)](#Main-page-(MainPageRestApi.class))
         * [GET /rest](#GET-/rest)
+        * [PUT /rest/confirmregister/{id}](#PUT-/rest/confirmregister/{id})
         * [POST /rest/register](#POST-/rest/register)
         * [POST /rest/contact](#POST-/rest/contact)
         * [GET /rest/error/403](#GET-/rest/error/403)
@@ -82,6 +83,16 @@ GET /rest
         }
         ```
     - Status.FORBIDDEN
+
+[GO BACK](#API-REST)
+
+PUT /rest/confirmregister/{id}
+-----
+**Confirm user email and set user alta.**
+- ![#1589F0](https://placehold.it/15/f03c15/000000?text=+) Return:
+    - Status.ACCEPTED
+    - Status.FORBIDDEN
+    - Status.NOT_FOUND
 
 [GO BACK](#API-REST)
 
