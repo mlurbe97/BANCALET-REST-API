@@ -129,27 +129,10 @@ POST /rest/register
             }
         ```
 - ![#1589F0](https://placehold.it/15/f03c15/000000?text=+) Return:
-    - JSON("UserDTO.class")
+    - JSON("MensajeDTO.class")
         ```json
         {
-            "id": 143,
-            "user": {
-                "city": "Valencia",
-                "code": "46021",
-                "country": "España",
-                "direccion": "Calle Serpis 17",
-                "email": "usuario1@usuario.com",
-                "estado": 0,
-                "lat": 0.2123,
-                "lon": 0.13456,
-                "numImg": 1,
-                "password": "$2a$10$q5DtZk6jEDS9f.a7M3ekf.Zidm.7BVuqdLIjx1eeoOqSoj0JUIasu",
-                "rate": 0,
-                "role": "ADMIN",
-                "telf": "12345",
-                "urlImg": "",
-                "username": "usuario1"
-            }
+            "mensaje": "usuar. Mensaje enviado correctamente, te responderemos a traves de: usuar@usuario.com"
         }
         ```
     - Status.FORBIDDEN
