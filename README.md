@@ -43,13 +43,13 @@ API REST
         * [PUT /rest/users/editPass](#PUT-/rest/users/editPass)
         * [GET /rest/users/misventas](#PUT-/rest/users/editPass)
         * [GET /rest/users/miscompras](#GET-/rest/users/miscompras)
-        * [GET /rest/users/miscontactosr](#GET-/rest/users/miscontactosr) NULL
-        * [GET /rest/users/miscontactose](#GET-/rest/users/miscontactose) NULL
+        * [GET /rest/users/miscontactosr](#GET-/rest/users/miscontactosr) BUILDING
+        * [GET /rest/users/miscontactose](#GET-/rest/users/miscontactose) BUILDING
         * [POST /rest/users/help](#POST-/rest/users/help)
-        * [GET /rest/users/missugerencias](#GET-/rest/users/missugerencias) NULL
+        * [GET /rest/users/missugerencias](#GET-/rest/users/missugerencias) BUILDING
 
    * [Items (ItemRestApi.class)](#Items-(ItemRestApi.class))
-        * [BUILDING](#Items-(ItemRestApi.class)) NULL
+        * [BUILDING](#Items-(ItemRestApi.class)) BUILDING
 <!--te-->
 
 Main page (MainPageRestApi.class)
