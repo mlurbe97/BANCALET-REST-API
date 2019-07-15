@@ -1,9 +1,9 @@
 
-API REST
+__BANCALET VIRTUAL API REST DOCUMENTATION__
 =================
 
 <!--ts-->
-   * [API REST](#API-REST)
+   * [API REST](#BANCALET-VIRTUAL-API-REST-DOCUMENTATION)
    * [Main page (MainPageRestApi.class)](#Main-page-(MainPageRestApi.class))
         * [GET /rest](#GET-/rest)
         * [PUT /rest/confirmregister/{id}](#PUT-/rest/confirmregister/{id})
@@ -49,10 +49,21 @@ API REST
         * [GET /rest/users/missugerencias](#GET-/rest/users/missugerencias) BUILDING
 
    * [Items (ItemRestApi.class)](#Items-(ItemRestApi.class))
-        * [BUILDING](#Items-(ItemRestApi.class)) BUILDING
+        * [GET /rest/items/contactosItem/{id}](#GET-/rest/items/contactosItem/{id})
+		* [GET /rest/items/contactosMyItem/{id}](#GET-/rest/items/contactosMyItem/{id})
+		* [GET /rest/items](#GET-/rest/items)
+		* [GET /rest/items/{id}](#GET-/rest/items/{id})
+		* [DELETE /rest/items/delete/{id}](#DELETE-/rest/items/delete/{id})
+		* [PUT /rest/items/baja/{id}](#PUT-/rest/items/baja/{id})
+		* [POST /rest/items/additem](#POST-/rest/items/additem)
+		* [PUT /rest/items/update/{id}](#PUT-/rest/items/update/{id})
+		* [DELETE /rest/items/delitemimages/{id}](#DELETE-/rest/items/delitemimages/{id})
+		* [GET /rest/items/myitems](#GET-/rest/items/myitems)
+		* [PUT /rest/items/sendto/{id}](#PUT-/rest/items/sendto/{id})
+		* [PUT /rest/items/rate/{id}](#PUT-/rest/items/rate/{id})
 <!--te-->
 
-Main page (MainPageRestApi.class)
+__Main page (MainPageRestApi.class)__
 =================
 
 GET /rest 
@@ -84,7 +95,7 @@ GET /rest
         ```
     - Status.FORBIDDEN
 
-[GO BACK](#API-REST)
+[GO BACK](#BANCALET-VIRTUAL-API-REST-DOCUMENTATION)
 
 PUT /rest/confirmregister/{id}
 -----
@@ -94,7 +105,7 @@ PUT /rest/confirmregister/{id}
     - Status.FORBIDDEN
     - Status.NOT_FOUND
 
-[GO BACK](#API-REST)
+[GO BACK](#BANCALET-VIRTUAL-API-REST-DOCUMENTATION)
 
 POST /rest/register
 -----
@@ -145,7 +156,7 @@ POST /rest/register
     - Status.BAD_REQUEST
     - Status.CONFLICT
 
-[GO BACK](#API-REST)
+[GO BACK](#BANCALET-VIRTUAL-API-REST-DOCUMENTATION)
 
 POST /rest/contact
 -----
@@ -170,7 +181,7 @@ POST /rest/contact
     - Status.BAD_REQUEST
     - Status.FORBIDDEN
 
-[GO BACK](#API-REST)
+[GO BACK](#BANCALET-VIRTUAL-API-REST-DOCUMENTATION)
 
 GET /rest/error/403
 -----
@@ -178,9 +189,9 @@ GET /rest/error/403
 - ![#1589F0](https://placehold.it/15/f03c15/000000?text=+) Return: 
     - Status.FORBIDDEN
 
-[GO BACK](#API-REST)
+[GO BACK](#BANCALET-VIRTUAL-API-REST-DOCUMENTATION)
 
-Admin (AdminRestApi.class)
+__Admin (AdminRestApi.class)__
 =================
 
 GET /rest/admin
@@ -196,7 +207,7 @@ GET /rest/admin
             "totalUsers": 2 
         }
         ```
-[GO BACK](#API-REST)
+[GO BACK](#BANCALET-VIRTUAL-API-REST-DOCUMENTATION)
 
 GET /rest/admin/totalAyudas
 -----
@@ -206,7 +217,7 @@ GET /rest/admin/totalAyudas
         ```json
         { "totalAyudas": 0 }
 
-[GO BACK](#API-REST)
+[GO BACK](#BANCALET-VIRTUAL-API-REST-DOCUMENTATION)
 
 POST /rest/admin/createUser
 -----
@@ -256,7 +267,7 @@ POST /rest/admin/createUser
     - Status.BAD_REQUEST
     - Status.CONFLICT
 
-[GO BACK](#API-REST)
+[GO BACK](#BANCALET-VIRTUAL-API-REST-DOCUMENTATION)
 
 GET /rest/admin/userList
 -----
@@ -340,7 +351,7 @@ GET /rest/admin/userList
         ```
     - Status.NO_CONTENT
 
-[GO BACK](#API-REST)
+[GO BACK](#BANCALET-VIRTUAL-API-REST-DOCUMENTATION)
 
 GET /rest/admin/{id}
 -----
@@ -372,7 +383,7 @@ GET /rest/admin/{id}
         ```
     - Status.NOT_FOUND
 
-[GO BACK](#API-REST)
+[GO BACK](#BANCALET-VIRTUAL-API-REST-DOCUMENTATION)
 
 PUT /rest/admin/{id}/bajaUser
 -----
@@ -403,7 +414,7 @@ PUT /rest/admin/{id}/bajaUser
         ```
     - Status.NOT_FOUND
 
-[GO BACK](#API-REST)
+[GO BACK](#BANCALET-VIRTUAL-API-REST-DOCUMENTATION)
 
 PUT /rest/admin/{id}/altaUser
 -----
@@ -434,7 +445,7 @@ PUT /rest/admin/{id}/altaUser
         ```
     - Status.NOT_FOUND
 
-[GO BACK](#API-REST)
+[GO BACK](#BANCALET-VIRTUAL-API-REST-DOCUMENTATION)
 
 PUT /rest/admin/{id}/editUser
 -----
@@ -479,7 +490,7 @@ PUT /rest/admin/{id}/editUser
     - Status.NOT_FOUND
     - Status.BAD_REQUEST
 
-[GO BACK](#API-REST)
+[GO BACK](#BANCALET-VIRTUAL-API-REST-DOCUMENTATION)
 
 PUT /rest/admin/{id}/editPass
 -----
@@ -498,7 +509,7 @@ PUT /rest/admin/{id}/editPass
     - Status.NOT_FOUND
     - Status.CONFLICT
 
-[GO BACK](#API-REST)
+[GO BACK](#BANCALET-VIRTUAL-API-REST-DOCUMENTATION)
 
 GET /rest/admin/{id}/ventas
 -----
@@ -537,7 +548,7 @@ GET /rest/admin/{id}/ventas
             ```
     - Status.NO_CONTENT
 
-[GO BACK](#API-REST)
+[GO BACK](#BANCALET-VIRTUAL-API-REST-DOCUMENTATION)
 
 GET /rest/admin/{id}/compras
 -----
@@ -579,7 +590,7 @@ GET /rest/admin/{id}/compras
         ```
     - Status.NO_CONTENT
 
-[GO BACK](#API-REST)
+[GO BACK](#BANCALET-VIRTUAL-API-REST-DOCUMENTATION)
 
 GET /rest/admin/issues
 -----
@@ -613,7 +624,7 @@ GET /rest/admin/issues
         ```
     - Status.NO_CONTENT
 
-[GO BACK](#API-REST)
+[GO BACK](#BANCALET-VIRTUAL-API-REST-DOCUMENTATION)
 
 GET /rest/admin/archivedIssues
 -----
@@ -647,7 +658,7 @@ GET /rest/admin/archivedIssues
         ```
     - Status.NO_CONTENT
 
-[GO BACK](#API-REST)
+[GO BACK](#BANCALET-VIRTUAL-API-REST-DOCUMENTATION)
 
 GET /rest/admin/issues/{id}
 -----
@@ -670,7 +681,7 @@ GET /rest/admin/issues/{id}
         ```
     - Status.NOT_FOUND
 
-[GO BACK](#API-REST)
+[GO BACK](#BANCALET-VIRTUAL-API-REST-DOCUMENTATION)
 
 DELETE /rest/admin/issues/{id}/delete
 -----
@@ -682,7 +693,7 @@ DELETE /rest/admin/issues/{id}/delete
     - Status.BAD_REQUEST
     - Status.NOT_FOUND
 
-[GO BACK](#API-REST)
+[GO BACK](#BANCALET-VIRTUAL-API-REST-DOCUMENTATION)
 
 PUT /rest/admin/issues/{id}/archive
 -----
@@ -704,9 +715,9 @@ PUT /rest/admin/issues/{id}/archive
     - Status.BAD_REQUEST
     - Status.NOT_FOUND
 
-[GO BACK](#API-REST)
+[GO BACK](#BANCALET-VIRTUAL-API-REST-DOCUMENTATION)
 
-Users (UserRestApi.class)
+__Users (UserRestApi.class)__
 =================
 
 GET /rest/users/sizeMsg/{id}
@@ -721,7 +732,7 @@ GET /rest/users/sizeMsg/{id}
         ```
     - Status.FORBIDDEN
 
-[GO BACK](#API-REST)
+[GO BACK](#BANCALET-VIRTUAL-API-REST-DOCUMENTATION)
 
 GET /rest/users/sizeRate/{id}
 -----
@@ -734,7 +745,7 @@ GET /rest/users/sizeRate/{id}
             }
         ```
 
-[GO BACK](#API-REST)
+[GO BACK](#BANCALET-VIRTUAL-API-REST-DOCUMENTATION)
 
 GET /rest/users/listUsers
 -----
@@ -794,7 +805,7 @@ GET /rest/users/listUsers
         ```
     - Status.NO_CONTENT
 
-[GO BACK](#API-REST)
+[GO BACK](#BANCALET-VIRTUAL-API-REST-DOCUMENTATION)
 
 GET /rest/users/getMaxVendor/{id}
 -----
@@ -807,7 +818,7 @@ GET /rest/users/getMaxVendor/{id}
         } 
         ```
 
-[GO BACK](#API-REST)
+[GO BACK](#BANCALET-VIRTUAL-API-REST-DOCUMENTATION)
 
 GET /rest/users/getMaxBuyer/{id}
 -----
@@ -819,7 +830,7 @@ GET /rest/users/getMaxBuyer/{id}
             "value": false
         } 
         ```
-[GO BACK](#API-REST)
+[GO BACK](#BANCALET-VIRTUAL-API-REST-DOCUMENTATION)
 
 GET /rest/users/getMaxRated/{id}
 -----
@@ -831,7 +842,7 @@ GET /rest/users/getMaxRated/{id}
             "value": false
         } 
         ```
-[GO BACK](#API-REST)
+[GO BACK](#BANCALET-VIRTUAL-API-REST-DOCUMENTATION)
 
 GET /rest/users/getUserTotalSales/{id}
 -----
@@ -843,7 +854,7 @@ GET /rest/users/getUserTotalSales/{id}
             "res": 1
         } 
         ```
-[GO BACK](#API-REST)
+[GO BACK](#BANCALET-VIRTUAL-API-REST-DOCUMENTATION)
 
 GET /rest/users/getRate/{id}
 -----
@@ -855,7 +866,7 @@ GET /rest/users/getRate/{id}
             "res": 1
         } 
         ```
-[GO BACK](#API-REST)
+[GO BACK](#BANCALET-VIRTUAL-API-REST-DOCUMENTATION)
 
 GET /rest/users/{id}
 -----
@@ -888,7 +899,7 @@ GET /rest/users/{id}
     - Status.NOT_FOUND
     - Status.FORBIDDEN
 
-[GO BACK](#API-REST)
+[GO BACK](#BANCALET-VIRTUAL-API-REST-DOCUMENTATION)
 
 GET /rest/users/login/{username}
 -----
@@ -921,7 +932,7 @@ GET /rest/users/login/{username}
     - Status.NOT_FOUND
     - Status.FORBIDDEN
 
-[GO BACK](#API-REST)
+[GO BACK](#BANCALET-VIRTUAL-API-REST-DOCUMENTATION)
 
 GET /rest/users/listUsersItems
 -----
@@ -970,7 +981,7 @@ GET /rest/users/listUsersItems
         ```
     - Status.NO_CONTENT
 
-[GO BACK](#API-REST)
+[GO BACK](#BANCALET-VIRTUAL-API-REST-DOCUMENTATION)
 
 PUT /rest/users/edit
 -----
@@ -1015,7 +1026,7 @@ PUT /rest/users/edit
         }
         ```
 
-[GO BACK](#API-REST)
+[GO BACK](#BANCALET-VIRTUAL-API-REST-DOCUMENTATION)
 
 PUT /rest/users/editPass
 -----
@@ -1031,7 +1042,7 @@ PUT /rest/users/editPass
 - ![#1589F0](https://placehold.it/15/f03c15/000000?text=+) Return:
     - Status.ACCEPTED
 
-[GO BACK](#API-REST)
+[GO BACK](#BANCALET-VIRTUAL-API-REST-DOCUMENTATION)
 
 GET /rest/users/misventas
 -----
@@ -1118,7 +1129,7 @@ GET /rest/users/misventas
             "userid": 406
         }
         ```
-[GO BACK](#API-REST)
+[GO BACK](#BANCALET-VIRTUAL-API-REST-DOCUMENTATION)
 
 GET /rest/users/miscompras
 -----
@@ -1210,7 +1221,7 @@ GET /rest/users/miscompras
         }
         ```
 
-[GO BACK](#API-REST)
+[GO BACK](#BANCALET-VIRTUAL-API-REST-DOCUMENTATION)
 
 GET /rest/users/miscontactosr
 -----
@@ -1223,7 +1234,7 @@ GET /rest/users/miscontactosr
         }
         ```
 
-[GO BACK](#API-REST)
+[GO BACK](#BANCALET-VIRTUAL-API-REST-DOCUMENTATION)
 
 GET /rest/users/miscontactose
 -----
@@ -1236,7 +1247,7 @@ GET /rest/users/miscontactose
         }
         ```
 
-[GO BACK](#API-REST)
+[GO BACK](#BANCALET-VIRTUAL-API-REST-DOCUMENTATION)
 
 POST /rest/users/help
 -----
@@ -1257,7 +1268,7 @@ POST /rest/users/help
             "mensaje": "usuario. Mensaje enviado correctamente, te responderemos a traves de: user@user.user"
         }
         ```
-[GO BACK](#API-REST)
+[GO BACK](#BANCALET-VIRTUAL-API-REST-DOCUMENTATION)
 
 GET /rest/users/missugerencias
 -----
@@ -1271,337 +1282,361 @@ GET /rest/users/missugerencias
         ```
     - Status.NOT_FOUND
 
-[GO BACK](#API-REST)
+[GO BACK](#BANCALET-VIRTUAL-API-REST-DOCUMENTATION)
 
-Items (ItemRestApi.class)
+__Items (ItemRestApi.class)__
 =================
 
-* __GET__ /rest/items/contactosItem/{id} = **Get my message sent to an item.**
-	- ![#1589F0](https://placehold.it/15/f03c15/000000?text=+) Return:
-		- JSON("ContactoDTO.class")
-             ```json 
-            {
-                "contacto":{
-                    "estado": 1,
-                    "fechaContacto": "2019-07-12",
-                    "idComprador": 405,
-                    "idVendedor": 406,
-                    "itemId": 64,
-                    "mensaje": "Lo quiero22222222",
-                    "read": 1
-                },
-                "idContacto": 19
-            }
-            ```
-		- Status.NOT_FOUND
-        - Status.FORBIDDEN
-
-[GO BACK](#API-REST)
-
-* __GET__ /rest/items/contactosMyItem/{id} = **Get all recived messages for my item with the corresponding id.**
-	- ![#1589F0](https://placehold.it/15/f03c15/000000?text=+) Return:
-		- JSON("ContactoDTO.class")
-            ```json
-            { 
-                "size": 1, 
-                "contactos": {
-                    "entry": [
-                        {
-                            "key": 19,
-                            "value": {
-                                "estado": 1,
-                                "fechaContacto": "2019-07-12",
-                                "idComprador": 405,
-                                "idVendedor": 406,
-                                "itemId": 64,
-                                "mensaje": "Lo quiero22222222",
-                                "read": 1
-                            }
-                        }
-                    ]
-                }
-            }
-            ```
-		- Status.NOT_FOUND
-        - Status.FORBIDDEN
-
-[GO BACK](#API-REST)
-
-*  __GET__ /rest/items = **List of filtered items alta.**
-	- ![#1589F0](https://placehold.it/15/1589F0/000000?text=+) Recive:
-		- QueryParam("name") __->__ _The name that will be include in the item filtered name._
-		- QueryParam("tipo") __->__ _The type of item filtered._
-		- QueryParam("minSlaider") __->__ _The min value of the slider._
-		- QueryParam("maxSlaider") __->__ _The max value of the slider._
-		- QueryParam("slider") __->__ _The values min and max selected inside the slider._
-		- QueryParam("itemTipoCaducidad") __->__ _The type of the date (Before, After, Any)._
-		- QueryParam("fecha_caducidad") __->__ _The date selected to be filtered._
-	- ![#1589F0](https://placehold.it/15/f03c15/000000?text=+) Return:
-		- JSON("ItemListFiltroDTO.class")
-            ```json
-            {
-                "date": "2019-07-12",
-                "fecha_caducidadCheck": 1,
-                "items": {
-                    "entry": [
-                        {
-                            "key": 64,
-                            "value": {
-                                "description": "frutaaaaa",
-                                "estado": 1,
-                                "fechaCaducidad": "2019-07-25",
-                                "fechaPublicacion": "2019-07-12",
-                                "idVendedor": 406,
-                                "name": "frutaa",
-                                "numeroVisitas": 0,
-                                "price": 32,
-                                "tipo": 1
-                            }
-                        }
-                    ]
-                },
-                "max": 32,
-                "maximoSeleccionado": 32,
-                "min": 0,
-                "minimoSeleccionado": 0,
-                "name": "f",
-                "size": 1,
-                "tipoCaducidad": 0,
-                "typeFood": 0
-            }    
-            ```
-
-[GO BACK](#API-REST)
-
-*  __GET__ /rest/items/{id} = **Get the item with the given id.**
-	- ![#1589F0](https://placehold.it/15/f03c15/000000?text=+) Return:
-		- JSON("ItemDTO.class")
-            ```json
-            {
-                "getImagesItemsEncode": [],
-                "item": {
-                    "description": "frutaaaaa",
-                    "estado": 1,
-                    "fechaCaducidad": "2019-07-25",
-                    "fechaPublicacion": "2019-07-12",
-                    "idVendedor": 406,
-                    "name": "frutaa",
-                    "numeroVisitas": 1,
-                    "price": 32,
-                    "tipo": 1
-                },
+GET /rest/items/contactosItem/{id}
+-----
+**Get my message sent to an item.**
+- ![#1589F0](https://placehold.it/15/f03c15/000000?text=+) Return:
+    - JSON("ContactoDTO.class")
+        ```json 
+        {
+            "contacto":{
+                "estado": 1,
+                "fechaContacto": "2019-07-12",
+                "idComprador": 405,
+                "idVendedor": 406,
                 "itemId": 64,
-                "propietario": false,
+                "mensaje": "Lo quiero22222222",
+                "read": 1
+            },
+            "idContacto": 19
+        }
+        ```
+    - Status.NOT_FOUND
+    - Status.FORBIDDEN
+
+[GO BACK](#BANCALET-VIRTUAL-API-REST-DOCUMENTATION)
+
+GET /rest/items/contactosMyItem/{id}
+-----
+**Get all recived messages for my item with the corresponding id.**
+- ![#1589F0](https://placehold.it/15/f03c15/000000?text=+) Return:
+    - JSON("ContactoDTO.class")
+        ```json
+        { 
+            "size": 1, 
+            "contactos": {
+                "entry": [
+                    {
+                        "key": 19,
+                        "value": {
+                            "estado": 1,
+                            "fechaContacto": "2019-07-12",
+                            "idComprador": 405,
+                            "idVendedor": 406,
+                            "itemId": 64,
+                            "mensaje": "Lo quiero22222222",
+                            "read": 1
+                        }
+                    }
+                ]
+            }
+        }
+        ```
+    - Status.NOT_FOUND
+    - Status.FORBIDDEN
+
+[GO BACK](#BANCALET-VIRTUAL-API-REST-DOCUMENTATION)
+
+GET /rest/items
+-----
+**List of filtered items alta.**
+- ![#1589F0](https://placehold.it/15/1589F0/000000?text=+) Recive:
+    - QueryParam("name") __->__ _The name that will be include in the item filtered name._
+    - QueryParam("tipo") __->__ _The type of item filtered._
+    - QueryParam("minSlaider") __->__ _The min value of the slider._
+    - QueryParam("maxSlaider") __->__ _The max value of the slider._
+    - QueryParam("slider") __->__ _The values min and max selected inside the slider._
+    - QueryParam("itemTipoCaducidad") __->__ _The type of the date (Before, After, Any)._
+    - QueryParam("fecha_caducidad") __->__ _The date selected to be filtered._
+- ![#1589F0](https://placehold.it/15/f03c15/000000?text=+) Return:
+    - JSON("ItemListFiltroDTO.class")
+        ```json
+        {
+            "date": "2019-07-12",
+            "fecha_caducidadCheck": 1,
+            "items": {
+                "entry": [
+                    {
+                        "key": 64,
+                        "value": {
+                            "description": "frutaaaaa",
+                            "estado": 1,
+                            "fechaCaducidad": "2019-07-25",
+                            "fechaPublicacion": "2019-07-12",
+                            "idVendedor": 406,
+                            "name": "frutaa",
+                            "numeroVisitas": 0,
+                            "price": 32,
+                            "tipo": 1
+                        }
+                    }
+                ]
+            },
+            "max": 32,
+            "maximoSeleccionado": 32,
+            "min": 0,
+            "minimoSeleccionado": 0,
+            "name": "f",
+            "size": 1,
+            "tipoCaducidad": 0,
+            "typeFood": 0
+        }    
+        ```
+
+[GO BACK](#BANCALET-VIRTUAL-API-REST-DOCUMENTATION)
+
+GET /rest/items/{id}
+-----
+**Get the item with the given id.**
+- ![#1589F0](https://placehold.it/15/f03c15/000000?text=+) Return:
+    - JSON("ItemDTO.class")
+        ```json
+        {
+            "getImagesItemsEncode": [],
+            "item": {
+                "description": "frutaaaaa",
+                "estado": 1,
+                "fechaCaducidad": "2019-07-25",
+                "fechaPublicacion": "2019-07-12",
+                "idVendedor": 406,
+                "name": "frutaa",
+                "numeroVisitas": 1,
+                "price": 32,
+                "tipo": 1
+            },
+            "itemId": 64,
+            "propietario": false,
+            "rate": 0,
+            "seller": {
+                "city": "Buenos Aires",
+                "code": "2222",
+                "country": "Argentina",
+                "direccion": "C/Fitz Roy 1235",
+                "email": "icatalan@itba.edu.ar",
+                "estado": 1,
+                "image": "",
+                "lat": -34.60043279,
+                "lon": -58.44685455,
+                "numImg": 0,
+                "password": "$2a$10$oNhSkqEUHyJLCnPI43YOzOn5QWOV3NJkvJiBZqN5gJZd72mrwu5jO",
                 "rate": 0,
-                "seller": {
-                    "city": "Buenos Aires",
-                    "code": "2222",
-                    "country": "Argentina",
-                    "direccion": "C/Fitz Roy 1235",
-                    "email": "icatalan@itba.edu.ar",
-                    "estado": 1,
-                    "image": "",
-                    "lat": -34.60043279,
-                    "lon": -58.44685455,
-                    "numImg": 0,
-                    "password": "$2a$10$oNhSkqEUHyJLCnPI43YOzOn5QWOV3NJkvJiBZqN5gJZd72mrwu5jO",
-                    "rate": 0,
-                    "role": "USER",
-                    "telf": "3235652323",
-                    "urlImg": "",
-                    "username": "izan123"
-                },
-                "sellerId": 406
-            } 
-            ```
-		- Status.NOT_FOUND
+                "role": "USER",
+                "telf": "3235652323",
+                "urlImg": "",
+                "username": "izan123"
+            },
+            "sellerId": 406
+        } 
+        ```
+    - Status.NOT_FOUND
 
-[GO BACK](#API-REST)
+[GO BACK](#BANCALET-VIRTUAL-API-REST-DOCUMENTATION)
 
-*  __DELETE__ /rest/items/delete/{id} = **Delete the item with the given id.**
-	- ![#1589F0](https://placehold.it/15/f03c15/000000?text=+) Return:
-		- Status.ACCEPTED
-		- Status.FORBIDDEN
-		- Status.NOT_FOUND
+DELETE /rest/items/delete/{id}
+-----
+**Delete the item with the given id.**
+- ![#1589F0](https://placehold.it/15/f03c15/000000?text=+) Return:
+    - Status.ACCEPTED
+    - Status.FORBIDDEN
+    - Status.NOT_FOUND
 
-[GO BACK](#API-REST)
+[GO BACK](#BANCALET-VIRTUAL-API-REST-DOCUMENTATION)
 
-*  __PUT__ /rest/items/baja/{id} = **Set status inactive (sold) of the item with the given id.**
-	- ![#1589F0](https://placehold.it/15/1589F0/000000?text=+) Recive:
-		- QueryParam("comprador") __->__ _The user purchase id of the item._
-	- ![#1589F0](https://placehold.it/15/f03c15/000000?text=+) Return:
-		- Status.ACCEPTED
-		- Status.FORBIDDEN
-		- Status.NOT_FOUND
+PUT /rest/items/baja/{id}
+-----
+**Set status inactive (sold) of the item with the given id.**
+- ![#1589F0](https://placehold.it/15/1589F0/000000?text=+) Recive:
+    - QueryParam("comprador") __->__ _The user purchase id of the item._
+- ![#1589F0](https://placehold.it/15/f03c15/000000?text=+) Return:
+    - Status.ACCEPTED
+    - Status.FORBIDDEN
+    - Status.NOT_FOUND
 
-[GO BACK](#API-REST)
+[GO BACK](#BANCALET-VIRTUAL-API-REST-DOCUMENTATION)
 
-*  __POST__ /rest/items/additem = **Create a new item.**
-	- ![#1589F0](https://placehold.it/15/1589F0/000000?text=+) Recive:
-		- JSON("ItemRegisterForm.class")
-            ```json
-            {
+POST /rest/items/additem
+-----
+**Create a new item.**
+- ![#1589F0](https://placehold.it/15/1589F0/000000?text=+) Recive:
+    - JSON("ItemRegisterForm.class")
+        ```json
+        {
+            "description": "pescado fresco",
+            "fechaCaducidad": "2019-09-28",
+            "name": "pescado",
+            "price": 45,
+            "tipo": 4,
+            "image": ""
+        }
+        ```
+- ![#1589F0](https://placehold.it/15/f03c15/000000?text=+) Return:
+    - JSON("ItemCreateDTO.class")
+        ```json
+        {
+            "item": {
                 "description": "pescado fresco",
+                "estado": 1,
                 "fechaCaducidad": "2019-09-28",
+                "fechaPublicacion": "2019-07-12",
+                "idVendedor": 406,
                 "name": "pescado",
+                "numeroVisitas": 0,
                 "price": 45,
                 "tipo": 4,
-                "image": ""
-            }
-            ```
-	- ![#1589F0](https://placehold.it/15/f03c15/000000?text=+) Return:
-		- JSON("ItemCreateDTO.class")
-            ```json
-            {
-                "item": {
-                    "description": "pescado fresco",
-                    "estado": 1,
-                    "fechaCaducidad": "2019-09-28",
-                    "fechaPublicacion": "2019-07-12",
-                    "idVendedor": 406,
-                    "name": "pescado",
-                    "numeroVisitas": 0,
-                    "price": 45,
-                    "tipo": 4,
-                    "urlImg": ""
-                },
-                "itemId": 64
-            }
-            ```
-		- Status.FORBIDDEN
+                "urlImg": ""
+            },
+            "itemId": 64
+        }
+        ```
+    - Status.FORBIDDEN
 
-[GO BACK](#API-REST)
+[GO BACK](#BANCALET-VIRTUAL-API-REST-DOCUMENTATION)
 
-*  __PUT__ /rest/items/update/{id} = **Update the item with the given id.**
-	- ![#1589F0](https://placehold.it/15/1589F0/000000?text=+) Recive:
-		- JSON("ItemRegisterForm.class")
-            ```json
-            {
+PUT /rest/items/update/{id}
+-----
+**Update the item with the given id.**
+- ![#1589F0](https://placehold.it/15/1589F0/000000?text=+) Recive:
+    - JSON("ItemRegisterForm.class")
+        ```json
+        {
+            "description": "pescado fresco",
+            "fechaCaducidad": "2019-09-28",
+            "name": "pescado",
+            "price": 45,
+            "tipo": 4,
+            "image": ""
+        }
+        ```
+- ![#1589F0](https://placehold.it/15/f03c15/000000?text=+) Return:
+    - JSON("ItemDTO.class")
+        ```json
+        {
+            "getImagesItemsEncode": [],
+            "item": {
                 "description": "pescado fresco",
+                "estado": 1,
                 "fechaCaducidad": "2019-09-28",
+                "fechaPublicacion": "2019-07-12",
+                "idVendedor": 406,
                 "name": "pescado",
+                "numeroVisitas": 0,
                 "price": 45,
                 "tipo": 4,
-                "image": ""
-            }
-            ```
-	- ![#1589F0](https://placehold.it/15/f03c15/000000?text=+) Return:
-		- JSON("ItemDTO.class")
-            ```json
-            {
-                "getImagesItemsEncode": [],
-                "item": {
-                    "description": "pescado fresco",
-                    "estado": 1,
-                    "fechaCaducidad": "2019-09-28",
-                    "fechaPublicacion": "2019-07-12",
-                    "idVendedor": 406,
-                    "name": "pescado",
-                    "numeroVisitas": 0,
-                    "price": 45,
-                    "tipo": 4,
-                    "urlImg": ""
-                },
-                "itemId": 64,
-                "propietario": true,
+                "urlImg": ""
+            },
+            "itemId": 64,
+            "propietario": true,
+            "rate": 0,
+            "seller": {
+                "city": "Buenos Aires",
+                "code": "2222",
+                "country": "Argentina",
+                "direccion": "C/Fitz Roy 1235",
+                "email": "icatalan@itba.edu.ar",
+                "estado": 1,
+                "image": "",
+                "lat": -34.60043279,
+                "lon": -58.44685455,
+                "numImg": 0,
+                "password": "$2a$10$oNhSkqEUHyJLCnPI43YOzOn5QWOV3NJkvJiBZqN5gJZd72mrwu5jO",
                 "rate": 0,
-                "seller": {
-                    "city": "Buenos Aires",
-                    "code": "2222",
-                    "country": "Argentina",
-                    "direccion": "C/Fitz Roy 1235",
-                    "email": "icatalan@itba.edu.ar",
-                    "estado": 1,
-                    "image": "",
-                    "lat": -34.60043279,
-                    "lon": -58.44685455,
-                    "numImg": 0,
-                    "password": "$2a$10$oNhSkqEUHyJLCnPI43YOzOn5QWOV3NJkvJiBZqN5gJZd72mrwu5jO",
-                    "rate": 0,
-                    "role": "USER",
-                    "telf": "3235652323",
-                    "urlImg": "",
-                    "username": "izan123"
-                },
-                "sellerId": 406
-            }
-            ```
-		- Status.FORBIDDEN
-		- Status.NOT_FOUND
+                "role": "USER",
+                "telf": "3235652323",
+                "urlImg": "",
+                "username": "izan123"
+            },
+            "sellerId": 406
+        }
+        ```
+    - Status.FORBIDDEN
+    - Status.NOT_FOUND
 
-[GO BACK](#API-REST)
+[GO BACK](#BANCALET-VIRTUAL-API-REST-DOCUMENTATION)
 
-*  __DELETE__ /rest/items/delitemimages/{id} = **Delete images from the item with the given id.**
-	- ![#1589F0](https://placehold.it/15/f03c15/000000?text=+) Return:
-		- Status.ACCEPTED
-		- Status.FORBIDDEN
-		- Status.NOT_FOUND
+DELETE /rest/items/delitemimages/{id}
+-----
+**Delete images from the item with the given id.**
+- ![#1589F0](https://placehold.it/15/f03c15/000000?text=+) Return:
+    - Status.ACCEPTED
+    - Status.FORBIDDEN
+    - Status.NOT_FOUND
 
-[GO BACK](#API-REST)
+[GO BACK](#BANCALET-VIRTUAL-API-REST-DOCUMENTATION)
 
-*  __GET__ /rest/items/myitems = **Get items on alta for the actual user.**
-	- ![#1589F0](https://placehold.it/15/f03c15/000000?text=+) Return:
-		- JSON("ItemListDTO.class")
-            ```json
-            {
-                "items": {
-                    "entry": [
-                        {
-                            "key": 64,
-                            "value": {
-                                "description": "pescado fresco",
-                                "estado": 1,
-                                "fechaCaducidad": "2019-09-28",
-                                "fechaPublicacion": "2019-07-12",
-                                "idVendedor": 406,
-                                "name": "pescado",
-                                "numeroVisitas": 0,
-                                "price": 45,
-                                "tipo": 4,
-                                "urlImg": ""
-                            }
+GET /rest/items/myitems
+-----
+**Get items on alta for the actual user.**
+- ![#1589F0](https://placehold.it/15/f03c15/000000?text=+) Return:
+    - JSON("ItemListDTO.class")
+        ```json
+        {
+            "items": {
+                "entry": [
+                    {
+                        "key": 64,
+                        "value": {
+                            "description": "pescado fresco",
+                            "estado": 1,
+                            "fechaCaducidad": "2019-09-28",
+                            "fechaPublicacion": "2019-07-12",
+                            "idVendedor": 406,
+                            "name": "pescado",
+                            "numeroVisitas": 0,
+                            "price": 45,
+                            "tipo": 4,
+                            "urlImg": ""
                         }
-                    ]
-                },
-                "size": 1
-            }
-            ```
-		- Status.NOT_FOUND
+                    }
+                ]
+            },
+            "size": 1
+        }
+        ```
+    - Status.NOT_FOUND
 
-[GO BACK](#API-REST)
+[GO BACK](#BANCALET-VIRTUAL-API-REST-DOCUMENTATION)
 
-*  __PUT__ /rest/items/sendto/{id} = **Send a message to the seller for an item with the given id.**
-	- ![#1589F0](https://placehold.it/15/1589F0/000000?text=+) Recive:
-		- JSON("ContactForm.class")
-            ```json
-            {
-                "mensaje": "Message to send here"
-            }
-            ```
-	- ![#1589F0](https://placehold.it/15/f03c15/000000?text=+) Return:
-		- JSON("MensajeDTO.class")
-            ```json
-            {
-                "mensaje": "Message to show on screen here"
-            }
-            ```
-		- Status.NOT_FOUND
-		- Status.FORBIDDEN
+PUT /rest/items/sendto/{id}
+-----
+**Send a message to the seller for an item with the given id.**
+- ![#1589F0](https://placehold.it/15/1589F0/000000?text=+) Recive:
+    - JSON("ContactForm.class")
+        ```json
+        {
+            "mensaje": "Message to send here"
+        }
+        ```
+- ![#1589F0](https://placehold.it/15/f03c15/000000?text=+) Return:
+    - JSON("MensajeDTO.class")
+        ```json
+        {
+            "mensaje": "Message to show on screen here"
+        }
+        ```
+    - Status.NOT_FOUND
+    - Status.FORBIDDEN
 
-[GO BACK](#API-REST)
+[GO BACK](#BANCALET-VIRTUAL-API-REST-DOCUMENTATION)
 
-*  __PUT__ /rest/items/rate/{id} = **Rate the item with the given id.**
-	- ![#1589F0](https://placehold.it/15/1589F0/000000?text=+) Recive:
-		- JSON("ItemRateForm.class")
-            ```json
-            {
-                "estrellas": 5,
-                "valoracion": "valoration text here"
-            }
-            ```
-	- ![#1589F0](https://placehold.it/15/f03c15/000000?text=+) Return:
-		- Status.ACCEPTED
-		- Status.NOT_FOUND
-		- Status.FORBIDDEN
+PUT /rest/items/rate/{id}
+-----
+**Rate the item with the given id.**
+- ![#1589F0](https://placehold.it/15/1589F0/000000?text=+) Recive:
+    - JSON("ItemRateForm.class")
+        ```json
+        {
+            "estrellas": 5,
+            "valoracion": "valoration text here"
+        }
+        ```
+- ![#1589F0](https://placehold.it/15/f03c15/000000?text=+) Return:
+    - Status.ACCEPTED
+    - Status.NOT_FOUND
+    - Status.FORBIDDEN
 
-[GO BACK](#API-REST)
+[GO BACK](#BANCALET-VIRTUAL-API-REST-DOCUMENTATION)
